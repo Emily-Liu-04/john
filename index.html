@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣的鄉土文學論戰 (1977-1978)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #8b4513;
+            --accent-color: #d4a574;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg-cream: #f5f1e8;
+            --bg-white: #ffffff;
+            --border-color: #d0c4a8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a4520 100%);
+            color: white;
+            padding: 4rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="80" opacity="0.05" fill="white">文</text></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            opacity: 0.95;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            display: block;
+            padding: 1.2rem 2rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom-color: var(--secondary-color);
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: -3rem auto 0;
+            padding: 0 2rem 4rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        section {
+            background-color: var(--bg-white);
+            margin-bottom: 3rem;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--accent-color);
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            color: var(--text-light);
+        }
+        
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+        
+        .timeline-date {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, #f8f6f0 0%, #e8e4d8 100%);
+            border-left: 5px solid var(--secondary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .quote-box p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Key Figures Grid */
+        .figures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .figure-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f6f0 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .figure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--primary-color);
+        }
+        
+        .figure-card h4 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Noto Serif TC', serif;
+        }
+        
+        .figure-card .role {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* List Styles */
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        /* Citation */
+        .citation {
+            background-color: #f0f0f0;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+        
+        .citation-title {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            nav a {
+                padding: 1rem 1.5rem;
+            }
+            
+            section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .timeline {
+                padding-left: 2rem;
+            }
+            
+            .figures-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>台灣的鄉土文學論戰</h1>
+            <p class="subtitle">1977-1978年的文學思潮與社會變遷</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduction">論戰簡介</a></li>
+            <li><a href="#background">歷史背景</a></li>
+            <li><a href="#timeline">論戰時程</a></li>
+            <li><a href="#figures">重要人物</a></li>
+            <li><a href="#debates">論辯內容</a></li>
+            <li><a href="#significance">歷史意義</a></li>
+            <li><a href="#sources">參考資料</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduction">
+            <h2>論戰簡介</h2>
+            <p>鄉土文學論戰是台灣文學史上最重要的文學論爭之一,發生於1977年至1978年間。這場論戰不僅是文學觀念的碰撞,更是對台灣社會、政治、文化定位的深刻反思。</p>
+            
+            <div class="quote-box">
+                <p>「鄉土文學論戰是在以『鄉土文學』為起所產生觀念的文學、文學潮流的發展過程中,發生的一場『鄉土文學』的興起以及發展過程,做一番概觀,以明瞭論戰的思想史的背景。」</p>
+                <p style="text-align: right; font-size: 0.9rem; color: var(--text-light);">— 王拓《是「現實主義文學」,不是「鄉土文學」》</p>
+            </div>
+            
+            <p>論戰的核心議題圍繞著:</p>
+            <ul>
+                <li>什麼是「鄉土文學」?其定義與範疇為何?</li>
+                <li>文學創作應該關注現實社會,還是追求純粹藝術?</li>
+                <li>台灣文學與中國文學的關係如何定位?</li>
+                <li>文學是否應該為政治服務?</li>
+                <li>知識分子對社會的責任與角色</li>
+            </ul>
+        </section>
+
+        <section id="background">
+            <h2>歷史背景</h2>
+            
+            <h3>社會經濟脈絡</h3>
+            <p>1970年代初期,台灣面臨重大的政治、經濟與社會變動:</p>
+            <ul>
+                <li><strong>1971年</strong>:中華民國退出聯合國,國際地位受到嚴重挑戰</li>
+                <li><strong>1972年</strong>:中日斷交,台灣外交陷入困境</li>
+                <li><strong>經濟轉型</strong>:從農業社會邁向工業社會,引發大量社會問題</li>
+                <li><strong>城鄉差距</strong>:經濟發展帶來的不平等與弱勢族群的處境</li>
+            </ul>
+            
+            <p>這些變動促使知識分子開始反思台灣的處境,以及文學應該扮演的角色。</p>
+            
+            <h3>文學思潮的演變</h3>
+            <p>從1960年代到1970年代,台灣文學經歷了重要的思想轉變:</p>
+            <ul>
+                <li><strong>現代主義時期</strong>:1950-1960年代,強調西化、個人主義與形式實驗</li>
+                <li><strong>回歸現實</strong>:1970年代開始,作家們開始關注台灣本土的社會現實</li>
+                <li><strong>鄉土文學興起</strong>:以描寫農村、勞工、弱勢族群生活為主要題材</li>
+            </ul>
+            
+            <div class="quote-box">
+                <p>在政治、經濟與社會思想意識形態的對立背景下,一次大規模文化戰爭的發生是不可避免的。</p>
+            </div>
+        </section>
+
+        <section id="timeline">
+            <h2>論戰時程</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1977年4月</div>
+                    <p>論戰的序幕開始。各方開始針對鄉土文學的定義與價值展開討論。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1977年7月</div>
+                    <p>論戰進入高峰期。王拓發表《是「現實主義文學」,不是「鄉土文學」》一文,主張鄉土文學應該更名為「現實主義文學」。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1977年8月</div>
+                    <p>保守派人士開始批評鄉土文學為「工農兵文學」,指控其具有左傾思想,可能危害國家安全。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1977年8月24日</div>
+                    <p>彭歌在《聯合報》發表《不談人性,何有文學?》,批判鄉土文學忽視人性。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1977年9月</div>
+                    <p>余光中發表《狼來了》一文,將鄉土文學與中國大陸的文藝政策連結,引發激烈爭論。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1978年1月</div>
+                    <p>政府相關部門開始介入,論戰逐漸降溫。</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1978年夏天</div>
+                    <p>論戰基本結束,但其影響持續至今。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="figures">
+            <h2>重要人物</h2>
+            
+            <h3>支持鄉土文學陣營</h3>
+            <div class="figures-grid">
+                <div class="figure-card">
+                    <h4>王拓</h4>
+                    <p class="role">理論家、小說家</p>
+                    <p>主張鄉土文學應正名為「現實主義文學」,強調文學應關注社會現實,反映勞動人民的生活與處境。代表作品包括《金水嬸》等。</p>
+                </div>
+                
+                <div class="figure-card">
+                    <h4>陳映真</h4>
+                    <p class="role">小說家、評論家</p>
+                    <p>強調文學的社會功能與批判性,主張文學應該反映第三世界人民的處境。作品深刻描繪台灣社會的矛盾與困境。</p>
+                </div>
+                
+                <div class="figure-card">
+                    <h4>尉天驄</h4>
+                    <p class="role">文學評論家</p>
+                    <p>提倡文學應該回歸鄉土,關注台灣本土的生活經驗。主編《文季》季刊,為鄉土文學提供重要的發表平台。</p>
+                </div>
+                
+                <div class="figure-card">
+                    <h4>黃春明</h4>
+                    <p class="role">小說家</p>
+                    <p>以細膩的筆觸描寫台灣農村與小人物的生活,作品充滿人文關懷。代表作包括《兒子的大玩偶》、《看海的日子》等。</p>
+                </div>
+            </div>
+            
+            <h3>批評鄉土文學陣營</h3>
+            <div class="figures-grid">
+                <div class="figure-card">
+                    <h4>余光中</h4>
+                    <p class="role">詩人、評論家</p>
+                    <p>發表《狼來了》一文,批評鄉土文學具有「工農兵文學」的傾向,可能成為政治工具。主張文學應該超越政治意識形態。</p>
+                </div>
+                
+                <div class="figure-card">
+                    <h4>彭歌</h4>
+                    <p class="role">評論家</p>
+                    <p>批評鄉土文學過度強調階級意識,忽視人性的普遍價值。主張文學應該以人性為核心,而非階級鬥爭。</p>
+                </div>
+                
+                <div class="figure-card">
+                    <h4>朱西甯</h4>
+                    <p class="role">小說家</p>
+                    <p>認為鄉土文學過於狹隘,文學應該有更廣闊的視野,不應侷限於描寫農村或勞工生活。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="debates">
+            <h2>論辯內容</h2>
+            
+            <h3>一、鄉土文學的定義之爭</h3>
+            <p>論戰的首要問題是:什麼是「鄉土文學」?</p>
+            
+            <div class="quote-box">
+                <p>王拓主張:「『鄉土文學』這個名稱是不妥當的...比較正確的應該是『現實主義文學』或『寫實主義文學』。」</p>
+            </div>
+            
+            <ul>
+                <li><strong>狹義定義</strong>:描寫農村、鄉土生活的文學作品</li>
+                <li><strong>廣義定義</strong>:關注台灣本土現實,反映社會問題的文學創作</li>
+                <li><strong>王拓的主張</strong>:應該稱為「現實主義文學」,強調其對社會現實的批判功能</li>
+            </ul>
+            
+            <h3>二、文學與政治的關係</h3>
+            <p>論戰的核心爭議之一是文學是否應該為政治服務:</p>
+            
+            <p><strong>支持鄉土文學者認為:</strong></p>
+            <ul>
+                <li>文學不能脫離社會現實,應該反映人民的生活與處境</li>
+                <li>知識分子有責任關注社會問題,文學是實踐社會關懷的重要途徑</li>
+                <li>文學的社會功能與藝術價值並不衝突</li>
+            </ul>
+            
+            <p><strong>批評者則認為:</strong></p>
+            <ul>
+                <li>文學如果過度強調政治功能,可能淪為政治宣傳工具</li>
+                <li>文學應該超越政治意識形態,追求普遍的人性價值</li>
+                <li>鄉土文學可能成為「工農兵文學」,重蹈中國大陸文革時期的覆轍</li>
+            </ul>
+            
+            <h3>三、人性與階級意識</h3>
+            <p>彭歌提出「不談人性,何有文學?」的質疑,引發關於文學應該強調人性還是階級意識的爭論。</p>
+            
+            <div class="quote-box">
+                <p>「文學的最高使命是彰顯人性、肯定人的尊嚴與價值,而不是強調階級鬥爭與對立。」— 彭歌</p>
+            </div>
+            
+            <p>支持鄉土文學者回應:人性不能脫離具體的社會脈絡,階級處境會影響人的生活經驗與價值觀。關注階級問題不等於否定人性,而是更深刻地理解人性的複雜性。</p>
+            
+            <h3>四、民族主義與本土意識</h3>
+            <p>論戰也涉及台灣文學的定位問題:</p>
+            <ul>
+                <li>鄉土文學強調關注台灣本土經驗,被視為本土意識的覺醒</li>
+                <li>批評者擔心這可能導致「中國」與「台灣」的分裂</li>
+                <li>如何在中華文化傳統與台灣本土特色之間取得平衡,成為爭論焦點</li>
+            </ul>
+        </section>
+
+        <section id="significance">
+            <h2>歷史意義與影響</h2>
+            
+            <h3>文學層面</h3>
+            <ul>
+                <li><strong>確立現實主義傳統</strong>:論戰後,關注社會現實的寫作方向成為台灣文學的重要傳統</li>
+                <li><strong>拓展文學題材</strong>:農村、勞工、弱勢族群的生活成為重要的創作題材</li>
+                <li><strong>提升文學的社會功能</strong>:文學被賦予更多的社會批判與反思功能</li>
+            </ul>
+            
+            <h3>思想層面</h3>
+            <ul>
+                <li><strong>本土意識的覺醒</strong>:促進台灣社會對本土認同的思考</li>
+                <li><strong>知識分子的角色反思</strong>:知識分子開始更關注社會正義與弱勢族群</li>
+                <li><strong>思想論爭的典範</strong>:展現了民間社會進行理性辯論的可能性</li>
+            </ul>
+            
+            <h3>政治社會層面</h3>
+            <p>雖然論戰最終因政府介入而降溫,但它反映了1970年代台灣社會的深刻變化:</p>
+            <ul>
+                <li>經濟發展帶來的社會問題開始受到重視</li>
+                <li>知識分子對威權體制提出溫和但堅定的批判</li>
+                <li>為後來的社會運動與民主化進程埋下種子</li>
+            </ul>
+            
+            <div class="quote-box">
+                <p>「鄉土文學論戰標誌著台灣文學界從『象牙塔』走向社會,從追求純粹藝術轉向關注現實人生的重要轉折。」</p>
+            </div>
+            
+            <h3>對後世的影響</h3>
+            <ul>
+                <li>1980年代的社會寫實文學持續發展</li>
+                <li>影響了報導文學、紀實文學的興起</li>
+                <li>促進台灣文學多元化發展</li>
+                <li>成為台灣文學史研究的重要課題</li>
+            </ul>
+        </section>
+
+        <section id="sources">
+            <h2>參考資料</h2>
+            
+            <div class="citation">
+                <div class="citation-title">主要文獻來源</div>
+                <p>1. 陳正醍,《台灣的鄉土文學論戰(1977-1978年)》,收錄於《台灣文學論戰》文獻。</p>
+                <p>2. 《鄉土文學論戰文本》,收錄王拓、陳映真、尉天驄、余光中、彭歌等人的重要論文。</p>
+            </div>
+            
+            <div class="citation">
+                <div class="citation-title">線上資源</div>
+                <p>國立台灣文學館 - 台灣文學常設展,<a href="https://tlvm.nmtl.gov.tw/zh/Theme/ExhibitionCont1?LLid=56" target="_blank" style="color: var(--primary-color);">https://tlvm.nmtl.gov.tw/zh/Theme/ExhibitionCont1?LLid=56</a></p>
+            </div>
+            
+            <div class="citation">
+                <div class="citation-title">圖片來源</div>
+                <p>本網站所有設計元素皆為原創CSS樣式,未使用外部圖片資源。</p>
+            </div>
+            
+            <h3>延伸閱讀</h3>
+            <ul>
+                <li>尉天驄編,《鄉土文學討論集》,台北:遠景出版社,1978年</li>
+                <li>黃春明,《兒子的大玩偶》,台北:聯合文學,1979年</li>
+                <li>陳映真,《將軍族》,台北:人間出版社,1975年</li>
+                <li>王拓,《金水嬸》,台北:遠景出版社,1976年</li>
+                <li>彭瑞金,《台灣新文學運動四十年》,台北:自立晚報,1991年</li>
+            </ul>
+        </section>
+
+        <section style="background: linear-gradient(135deg, #f8f6f0 0%, #e8e4d8 100%); border-left: 5px solid var(--secondary-color);">
+            <h2>結語</h2>
+            <p>鄉土文學論戰距今已逾四十年,但其提出的問題——文學與社會的關係、知識分子的責任、本土意識與文化認同——至今仍然值得我們深思。</p>
+            
+            <p>這場論戰不僅是台灣文學史上的重要事件,更是理解1970年代台灣社會變遷的重要切入點。它見證了一個時代的焦慮與希望,也為台灣文學開創了新的方向。</p>
+            
+            <p>回顧這段歷史,我們可以看到,即使在威權體制下,知識分子仍然堅持理性論辯,為台灣社會的進步貢獻心力。這種精神,值得後人學習與傳承。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 台灣的鄉土文學論戰網站 | 教育用途網站</p>
+        <p>資料來源:國立台灣文學館、《鄉土文學論戰文本》、陳正醍著作等</p>
+        <p>本網站內容僅供學術研究與教育使用</p>
+    </footer>
+</body>
+</html>
